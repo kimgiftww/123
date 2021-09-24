@@ -1,5 +1,6 @@
 from flask import Flask, Response
 from dash import Dash
+import dash_html_components as html
 
 app = Flask(__name__)
 
