@@ -1,5 +1,4 @@
 from flask import Flask, Response
-
 from dash import Dash
 
 app = Flask(__name__)
@@ -14,6 +13,8 @@ dash_app = dash.Dash(
 
 dash_app.layout = html.Div(['Test'], id='dash-container')
 
+app = dash_app.server
+
 @app.route('/')
 def catch_all():
-    return dash_app.server
+    return app
