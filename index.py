@@ -4,17 +4,22 @@ import dash_html_components as html
 
 app = Flask(__name__)
 
-dash_app = dash.Dash(
-        server=app,
+def init_dashboard(server):
+    """Create a Plotly Dash dashboard."""
+    dash_app = dash.Dash(
+        server=server,
         routes_pathname_prefix='/dashapp/',
         external_stylesheets=[
             '/static/dist/css/styles.css',
         ]
     )
 
-dash_app.layout = html.Div(['Test'], id='dash-container')
+    # Create Dash Layout
+    dash_app.layout = html.H1('Hello Dash')
 
-app = dash_app.server
+    return dash_app.server
+
+app = init_dashboard(app)
 
 @app.route('/')
 def catch_all():
