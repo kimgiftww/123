@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def init_dashboard(server):
     """Create a Plotly Dash dashboard."""
-    dash_app = dash.Dash(
+    dash_app = Dash(
         server=server,
         routes_pathname_prefix='/dashapp/',
         external_stylesheets=[
