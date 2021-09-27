@@ -23,4 +23,4 @@ app = init_dashboard(app)
 
 @app.route('/')
 def catch_all():
-    return app
+    return '<h1>Hello Flask</h1>'
